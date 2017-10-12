@@ -1,0 +1,56 @@
+{
+  "name": "@tadashi/debug",
+  "version": "1.0.0",
+  "description": "Small debugging utility with log and error",
+  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "report": "nyc report --reporter=html",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "pretest": "xo",
+    "test": "nyc ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lagden/debug.git"
+  },
+  "keywords": [
+    "debug",
+    "log",
+    "error",
+    "prefix"
+  ],
+  "author": "Thiago Lagden",
+  "license": "MIT",
+  "homepage": "https://github.com/lagden/debug#readme",
+  "bugs": {
+    "url": "https://github.com/lagden/debug/issues"
+  },
+  "dependencies": {
+    "debug": "3.1.0"
+  },
+  "devDependencies": {
+    "ava": "0.22.0",
+    "coveralls": "3.0.0",
+    "nyc": "11.2.1",
+    "xo": "0.18.2"
+  },
+  "xo": {
+    "envs": [
+      "node"
+    ],
+    "semicolon": false,
+    "rules": {
+      "camelcase": [
+        "error",
+        {
+          "properties": "never"
+        }
+      ],
+      "capitalized-comments": 0
+    }
+  }
+}
