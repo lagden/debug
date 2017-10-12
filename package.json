@@ -11,7 +11,7 @@
     "report": "nyc report --reporter=html",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "xo",
-    "test": "nyc ava"
+    "test": "DEBUG=tadashi-debug:* nyc ava"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "ava": "0.22.0",
     "coveralls": "3.0.0",
     "nyc": "11.2.1",
+    "sinon": "4.0.1",
     "xo": "0.18.2"
   },
   "xo": {

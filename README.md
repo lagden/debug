@@ -70,7 +70,7 @@ debug.error('Crap!')
 ```json
 {
   "scripts": {
-    "default": "DEBUG=tadashi-debug:* node sample.js"
+    "default": "DEBUG=tadashi-debug:* node sample.js",
     "custom": "export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js"
   }
 }
