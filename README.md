@@ -25,7 +25,7 @@
 [greenkeeper]:     https://greenkeeper.io/
 
 
-Small debugging utility with log and error
+Small debugging utility
 
 It's just a pre setup: https://github.com/visionmedia/debug#output-streams
 
