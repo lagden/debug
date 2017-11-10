@@ -9,9 +9,6 @@
 [![XO code style][xo-img]][xo]
 [![Greenkeeper badge][greenkeeper-img]][greenkeeper]
 
-
-[greenkeeper-img]: https://badges.greenkeeper.io/lagden/debug.svg
-[greenkeeper]:     https://greenkeeper.io/
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/debug.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/debug
 [ci-img]:          https://travis-ci.org/lagden/debug.svg
@@ -24,6 +21,8 @@
 [devDep]:          https://david-dm.org/lagden/debug#info=devDependencies
 [xo-img]:          https://img.shields.io/badge/code_style-XO-5ed9c7.svg
 [xo]:              https://github.com/sindresorhus/xo
+[greenkeeper-img]: https://badges.greenkeeper.io/lagden/debug.svg
+[greenkeeper]:     https://greenkeeper.io/
 
 
 Small debugging utility with log and error
@@ -53,39 +52,38 @@ Using the follow code: **sample.js**
 ```js
 'use strict'
 
-const debug = require('@tadashi/debug')
+const {log, error, info, warn} = require('@tadashi/debug')
 
-// logs
-debug.log('Apenas um show')
-debug.log('Ulalá')
+// log
+log('Apenas um show')
 
-// errors
-debug.error('Ohhhh!!!')
-debug.error('Crap!')
+// error
+error('Crap!')
+
+// info
+info('This is very important!')
+
+// warn
+warn('Atention!!')
 ```
 
 
-### Package.json
+### Setup using default prefix
+
+#### Package.json
 
 ```json
 {
   "scripts": {
-    "default": "DEBUG=tadashi-debug:* node sample.js",
-    "custom": "export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js"
+    "start": "DEBUG=tadashi-debug:* node sample.js",
   }
 }
 ```
-
-### CLI
-
-There's two samples: `default` and `custom`
-
 
 #### Bash
 
 ```
 $ DEBUG=tadashi-debug:* node sample.js
-$ export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js
 ```
 
 
@@ -93,6 +91,31 @@ $ export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js
 
 ```
 $ env DEBUG="tadashi-debug:*" node sample.js
+```
+
+
+### Setup using custom prefix
+
+#### Package.json
+
+```json
+{
+  "scripts": {
+    "start": "export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js"
+  }
+}
+```
+
+#### Bash
+
+```
+$ export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js
+```
+
+
+#### Fish
+
+```
 $ set -x PREFIX_DEBUG sample-debug; env DEBUG="$PREFIX_DEBUG:*" node sample.js
 ```
 

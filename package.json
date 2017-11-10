@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/debug",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Small debugging utility with log and error",
   "main": "index.js",
   "files": [
