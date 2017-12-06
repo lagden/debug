@@ -42,7 +42,7 @@ $ npm i -S @tadashi/debug
 The API is the same of https://github.com/visionmedia/debug
 
 **Attention**  
-You can set your `PREFIX_DEBUG`, default is: `tadashi-debug`
+You can set your prefix, default is: `tadashi-debug`
 
 
 ## Usage
@@ -52,7 +52,8 @@ Using the follow code: **sample.js**
 ```js
 'use strict'
 
-const {log, error, info, warn} = require('@tadashi/debug')
+const debug = require('@tadashi/debug')
+const {log, error, info, warn} = debug('my-api')
 
 // log
 log('Apenas um show')
@@ -65,58 +66,6 @@ info('This is very important!')
 
 // warn
 warn('Atention!!')
-```
-
-
-### Setup using default prefix
-
-#### Package.json
-
-```json
-{
-  "scripts": {
-    "start": "DEBUG=tadashi-debug:* node sample.js",
-  }
-}
-```
-
-#### Bash
-
-```
-$ DEBUG=tadashi-debug:* node sample.js
-```
-
-
-#### Fish
-
-```
-$ env DEBUG="tadashi-debug:*" node sample.js
-```
-
-
-### Setup using custom prefix
-
-#### Package.json
-
-```json
-{
-  "scripts": {
-    "start": "export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js"
-  }
-}
-```
-
-#### Bash
-
-```
-$ export PREFIX_DEBUG=sample-debug; DEBUG=$PREFIX_DEBUG:* node sample.js
-```
-
-
-#### Fish
-
-```
-$ set -x PREFIX_DEBUG sample-debug; env DEBUG="$PREFIX_DEBUG:*" node sample.js
 ```
 
 

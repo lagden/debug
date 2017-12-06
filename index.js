@@ -1,19 +1,23 @@
 'use strict'
 
-const debug = require('debug')
+const _debug = require('debug')
 
-const {PREFIX_DEBUG = 'tadashi-debug'} = process.env
+function debug(prefix = 'tadashi-debug') {
+	const log = _debug(`${prefix}:log`)
+	const error = _debug(`${prefix}:error`)
+	const info = _debug(`${prefix}:info`)
+	const warn = _debug(`${prefix}:warn`)
 
-const log = debug(`${PREFIX_DEBUG}:log`)
-const error = debug(`${PREFIX_DEBUG}:error`)
-const info = debug(`${PREFIX_DEBUG}:info`)
-const warn = debug(`${PREFIX_DEBUG}:warn`)
+	log.log = console.log.bind(console)
+	log.info = console.info.bind(console)
+	log.warn = console.warn.bind(console)
 
-log.log = console.log.bind(console)
-log.info = console.info.bind(console)
-log.warn = console.warn.bind(console)
+	return {
+		log,
+		info,
+		warn,
+		error
+	}
+}
 
-exports.log = log
-exports.error = error
-exports.info = info
-exports.warn = warn
+module.exports = debug

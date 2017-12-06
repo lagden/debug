@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/debug",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Small debugging utility",
   "main": "index.js",
   "files": [
@@ -11,7 +11,7 @@
     "report": "nyc report --reporter=html",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "xo",
-    "test": "DEBUG=tadashi-debug:* nyc ava"
+    "test": "DEBUG=tadashi-debug:* nyc ava -t"
   },
   "repository": {
     "type": "git",
