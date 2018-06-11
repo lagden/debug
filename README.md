@@ -41,19 +41,21 @@ $ npm i -S @tadashi/debug
 
 The API is the same of https://github.com/visionmedia/debug
 
-**Attention**  
-You can set your prefix, default is: `tadashi-debug`
+
+## Environment Variables
+
+**Attention**
+
+You must set an environment variables `DEBUG_NAME`  
+Default is: `tadashi-debug`
 
 
 ## Usage
 
-Using the follow code: **sample.js**
-
 ```js
 'use strict'
 
-const debug = require('@tadashi/debug')
-const {log, error, info, warn} = debug('my-api')
+const {log, error, info, warn} = require('@tadashi/debug')
 
 // log
 log('Apenas um show')

@@ -2,7 +2,9 @@
 
 const _debug = require('debug')
 
-function debug(prefix = 'tadashi-debug') {
+const {DEBUG_NAME = 'tadashi-debug'} = process.env
+
+function debug(prefix) {
 	const log = _debug(`${prefix}:log`)
 	const info = _debug(`${prefix}:info`)
 	const warn = _debug(`${prefix}:warn`)
@@ -25,4 +27,4 @@ function debug(prefix = 'tadashi-debug') {
 	}
 }
 
-module.exports = debug
+module.exports = debug(DEBUG_NAME)

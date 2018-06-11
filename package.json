@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/debug",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Small debugging utility",
   "main": "index.js",
   "files": [
@@ -8,10 +8,11 @@
     "README.md"
   ],
   "scripts": {
-    "report": "nyc report --reporter=html",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "report": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "xo",
-    "test": "DEBUG_COLORS=1 DEBUG=tadashi-debug:* nyc ava -t"
+    "test": "DEBUG_COLORS=1 DEBUG_DEPTH=1 DEBUG=tadashi-debug:* ava -t",
+    "pretest-cov": "xo",
+    "test-cov": "DEBUG=tadashi-debug:* nyc ava -t"
   },
   "repository": {
     "type": "git",
@@ -34,10 +35,9 @@
   },
   "devDependencies": {
     "ava": "0.25.0",
-    "coveralls": "3.0.0",
-    "nyc": "11.4.1",
-    "sinon": "4.4.3",
-    "xo": "0.20.3"
+    "nyc": "12.0.2",
+    "sinon": "6.0.0",
+    "xo": "0.21.1"
   },
   "xo": {
     "envs": [

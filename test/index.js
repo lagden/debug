@@ -2,15 +2,13 @@
 
 import test from 'ava'
 import sinon from 'sinon'
-import debug from '../.'
-
-const _debug = debug()
+import debug from '..'
 
 test('debug', t => {
 	for (const m of ['log', 'info', 'warn', 'error']) {
-		_debug[m](`___${m}___`)
-		const stub = sinon.stub(_debug, m)
-		_debug[m]('test...')
+		debug[m](`___${m}___`)
+		const stub = sinon.stub(debug, m)
+		debug[m]('test...')
 		t.true(stub.called)
 	}
 })
