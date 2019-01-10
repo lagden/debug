@@ -1,4 +1,6 @@
-# debug
+# debug - DEPRECATED
+
+Use [debug](https://www.npmjs.com/package/debug) instead
 
 [![NPM version][npm-img]][npm]
 [![Build Status][ci-img]][ci]
@@ -7,7 +9,6 @@
 [![devDependency Status][devDep-img]][devDep]
 
 [![XO code style][xo-img]][xo]
-[![Greenkeeper badge][greenkeeper-img]][greenkeeper]
 
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/debug.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/debug
@@ -21,8 +22,6 @@
 [devDep]:          https://david-dm.org/lagden/debug#info=devDependencies
 [xo-img]:          https://img.shields.io/badge/code_style-XO-5ed9c7.svg
 [xo]:              https://github.com/sindresorhus/xo
-[greenkeeper-img]: https://badges.greenkeeper.io/lagden/debug.svg
-[greenkeeper]:     https://greenkeeper.io/
 
 
 Small debugging utility
