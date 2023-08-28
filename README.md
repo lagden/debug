@@ -1,32 +1,19 @@
-# debug - DEPRECATED
-
-Use [debug](https://www.npmjs.com/package/debug) instead
+# debug
 
 [![NPM version][npm-img]][npm]
 [![Build Status][ci-img]][ci]
 [![Coverage Status][coveralls-img]][coveralls]
-[![Dependency Status][dep-img]][dep]
-[![devDependency Status][devDep-img]][devDep]
 
-[![XO code style][xo-img]][xo]
 
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/debug.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/debug
-[ci-img]:          https://travis-ci.org/lagden/debug.svg
-[ci]:              https://travis-ci.org/lagden/debug
+[ci-img]:          https://github.com/lagden/debug/actions/workflows/nodejs.yml/badge.svg
+[ci]:              https://github.com/lagden/debug/actions/workflows/nodejs.yml
 [coveralls-img]:   https://coveralls.io/repos/github/lagden/debug/badge.svg?branch=master
 [coveralls]:       https://coveralls.io/github/lagden/debug?branch=master
-[dep-img]:         https://david-dm.org/lagden/debug.svg
-[dep]:             https://david-dm.org/lagden/debug
-[devDep-img]:      https://david-dm.org/lagden/debug/dev-status.svg
-[devDep]:          https://david-dm.org/lagden/debug#info=devDependencies
-[xo-img]:          https://img.shields.io/badge/code_style-XO-5ed9c7.svg
-[xo]:              https://github.com/sindresorhus/xo
 
 
 Small debugging utility
-
-It's just a pre setup: https://github.com/visionmedia/debug#output-streams
 
 
 ## Install
@@ -38,38 +25,44 @@ $ npm i -S @tadashi/debug
 
 ## API
 
-The API is the same of https://github.com/visionmedia/debug
+The API is the same of https://github.com/debug-js/debug  
+It's just a preset: https://github.com/debug-js/debug#output-streams
+
 
 
 ## Environment Variables
 
-**Attention**
+⚠️ **Warning**
 
-You must set an environment variables `DEBUG_NAME`  
-Default is: `tadashi-debug`
+> You must set the environment variables `DEBUG_PREFIX`  
+> Default is: `@tadashi`
 
 
 ## Usage
 
 ```js
-'use strict'
-
-const {log, error, info, warn} = require('@tadashi/debug')
+import * as debug from '../src/debug.js'
 
 // log
-log('Apenas um show')
+debug.log('Apenas um show')
 
 // error
-error('Crap!')
+debug.error('Crap!')
 
 // info
-info('This is very important!')
+debug.info('This is an information')
 
 // warn
-warn('Atention!!')
+debug.warn('Atention!')
 ```
+
+
+## Donate ❤️
+
+- BTC: bc1q7famhuj5f25n6qvlm3sssnymk2qpxrfwpyq7g4
 
 
 ## License
 
-MIT © [Thiago Lagden](http://lagden.in)
+MIT © [TJ Holowaychuk](tj@vision-media.ca)
+MIT © [Thiago Lagden](https://github.com/lagden)

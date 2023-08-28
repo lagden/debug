@@ -1,16 +1,18 @@
 {
   "name": "@tadashi/debug",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Small debugging utility",
-  "main": "index.js",
+  "main": "src/debug.js",
   "files": [
+    "src",
     "LICENSE",
     "README.md"
   ],
+  "type": "module",
   "scripts": {
-    "report": "nyc report --reporter=text-lcov | coveralls",
-    "pretest": "xo",
-    "test": "DEBUG=tadashi-debug:* ava -t"
+    "eslint": "eslint --ignore-path .gitignore .",
+    "pretest": "npm run eslint",
+    "test": "c8 --reporter=text --reporter=lcov ava"
   },
   "repository": {
     "type": "git",
@@ -28,27 +30,13 @@
   "bugs": {
     "url": "https://github.com/lagden/debug/issues"
   },
-  "dependencies": {
-    "debug": "3.1.0"
+  "peerDependencies": {
+    "debug": ">= 4.3.4 < 5"
   },
   "devDependencies": {
-    "ava": "0.25.0",
-    "sinon": "6.0.0",
-    "xo": "0.21.1"
-  },
-  "xo": {
-    "envs": [
-      "node"
-    ],
-    "semicolon": false,
-    "rules": {
-      "camelcase": [
-        "error",
-        {
-          "properties": "never"
-        }
-      ],
-      "capitalized-comments": 0
-    }
+    "ava": "5.3.1",
+    "c8": "8.0.1",
+    "eslint": "8.48.0",
+    "eslint-plugin-unicorn": "48.0.1"
   }
 }
