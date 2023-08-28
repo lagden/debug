@@ -64,5 +64,5 @@ debug.warn('Atention!')
 
 ## License
 
-MIT © [TJ Holowaychuk](tj@vision-media.ca)
+MIT © [TJ Holowaychuk](tj@vision-media.ca)  
 MIT © [Thiago Lagden](https://github.com/lagden)
