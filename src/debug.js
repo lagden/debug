@@ -3,25 +3,28 @@ import debug from 'debug'
 
 const {DEBUG_PREFIX = '@tadashi'} = process.env
 
-const error = debug(`${DEBUG_PREFIX}:error`)
-const warn = debug(`${DEBUG_PREFIX}:warn`)
-const info = debug(`${DEBUG_PREFIX}:info`)
-const log = debug(`${DEBUG_PREFIX}:log`)
-const console = debug(`${DEBUG_PREFIX}:console`)
+const _error = debug(`${DEBUG_PREFIX}:error`)
+const _warn = debug(`${DEBUG_PREFIX}:warn`)
+const _info = debug(`${DEBUG_PREFIX}:info`)
+const _log = debug(`${DEBUG_PREFIX}:log`)
+const _console = debug(`${DEBUG_PREFIX}:console`)
 
-const colors = [0, 5, 40, 60, 10]
+const findColor = color => v => v === color
 
-log.color = debug.colors[colors[0]]
-info.color = debug.colors[colors[1]]
-warn.color = debug.colors[colors[2]]
-error.color = debug.colors[colors[3]]
-console.color = debug.colors[colors[4]]
+/* c8 ignore start */
+_log.color = debug.colors.find(findColor(20)) ?? debug.colors[1]
+_info.color = debug.colors.find(findColor(39)) ?? debug.colors[3]
+_warn.color = debug.colors.find(findColor(179)) ?? debug.colors[2]
+_error.color = debug.colors.find(findColor(196)) ?? debug.colors[5]
+_console.color = debug.colors.find(findColor(40)) ?? debug.colors[4]
+/* c8 ignore stop */
 
 export {
-	log,
-	info,
-	warn,
-	error,
-	console,
+	_log as log,
+	_info as info,
+	_warn as warn,
+	_error as error,
+	_console as console,
 }
+
 export {default} from 'debug'
