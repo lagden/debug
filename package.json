@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/debug",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Small debugging utility",
   "repository": {
     "type": "git",
@@ -34,7 +34,8 @@
     "test": "env DEBUG_COLORS=1 c8 --reporter=text --reporter=lcov node --test test/*.spec.js"
   },
   "peerDependencies": {
-    "debug": ">= 4 < 5"
+    "debug": ">= 4 < 5",
+    "supports-color": ">= 8 < 9"
   },
   "devDependencies": {
     "c8": "9.1.0",
