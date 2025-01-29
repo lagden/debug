@@ -1,45 +1,41 @@
 {
-  "name": "@tadashi/debug",
-  "version": "4.2.0",
-  "description": "Small debugging utility",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/lagden/debug.git"
-  },
-  "keywords": [
-    "debug",
-    "log",
-    "error",
-    "prefix"
-  ],
-  "author": "Thiago Lagden",
-  "license": "MIT",
-  "homepage": "https://github.com/lagden/debug#readme",
-  "bugs": {
-    "url": "https://github.com/lagden/debug/issues"
-  },
-  "files": [
-    "src",
-    "LICENSE",
-    "README.md"
-  ],
-  "main": "src/debug.js",
-  "type": "module",
-  "exports": {
-    ".": "./src/debug.js"
-  },
-  "scripts": {
-    "eslint": "eslint --ignore-path .gitignore .",
-    "pretest": "npm run eslint",
-    "test": "env DEBUG_COLORS=1 c8 --reporter=text --reporter=lcov node --test test/*.spec.js"
-  },
-  "peerDependencies": {
-    "debug": ">= 4 < 5",
-    "supports-color": ">= 8 < 10"
-  },
-  "devDependencies": {
-    "c8": "9.1.0",
-    "eslint": "8.57.0",
-    "eslint-plugin-unicorn": "51.0.1"
-  }
+	"name": "@tadashi/debug",
+	"version": "4.2.0",
+	"description": "Small debugging utility",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/lagden/debug.git"
+	},
+	"keywords": [
+		"debug",
+		"log",
+		"error",
+		"prefix"
+	],
+	"author": "Thiago Lagden",
+	"license": "MIT",
+	"homepage": "https://github.com/lagden/debug#readme",
+	"bugs": {
+		"url": "https://github.com/lagden/debug/issues"
+	},
+	"files": [
+		"src",
+		"LICENSE",
+		"README.md"
+	],
+	"main": "src/debug.js",
+	"type": "module",
+	"exports": {
+		".": "./src/debug.js"
+	},
+	"scripts": {
+		"test": "env DEBUG_COLORS=1 c8 --reporter=text --reporter=lcov node --test test/*.spec.js"
+	},
+	"peerDependencies": {
+		"debug": ">= 4 < 5",
+		"supports-color": ">= 8 < 10"
+	},
+	"devDependencies": {
+		"c8": "10.1.3"
+	}
 }
