@@ -33,7 +33,7 @@
 	},
 	"peerDependencies": {
 		"debug": ">= 4 < 5",
-		"supports-color": ">= 8 < 10"
+		"supports-color": ">= 8 < 11"
 	},
 	"devDependencies": {
 		"c8": "10.1.3"
