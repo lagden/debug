@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/debug",
-  "version": "4.1.2",
+  "version": "4.2.0",
   "description": "Small debugging utility",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "debug": ">= 4 < 5",
-    "supports-color": ">= 8 < 9"
+    "supports-color": ">= 8 < 10"
   },
   "devDependencies": {
     "c8": "9.1.0",
